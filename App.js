@@ -38,6 +38,7 @@ const App = () => {
 
   const [isLoggedIn, setisLoggedIn] = useState(false);
   const [AdminLogin, setAdminLogin] = useState(false);
+  const [isAdminLoggedIn, setisAdminLoggedIn] = useState(false);
   const [products, setproducts] = useState( [
     {id:1, title: "Product 1",  price:"$ 25.00 USD", image:"https://via.placeholder.com/400x200/FFB6C1/000000"},
     {id:2, title: "Product 2",  price:"$ 10.13 USD", image:"https://via.placeholder.com/400x200/FA8072/000000"} ,
@@ -53,7 +54,7 @@ const App = () => {
   const [cart, setcart] = useState([]);
 
   return (
-    <GlobalContext.Provider value={{isLoggedIn,setisLoggedIn,AdminLogin, setAdminLogin,products, setproducts,cart, setcart}}>
+    <GlobalContext.Provider value={{isLoggedIn,setisLoggedIn,AdminLogin, setAdminLogin,products, setproducts,cart, setcart, isAdminLoggedIn, setisAdminLoggedIn}}>
     <Container>    
     <AppNavigation/>
     </Container>

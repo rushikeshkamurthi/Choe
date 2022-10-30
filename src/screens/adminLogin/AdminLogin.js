@@ -43,11 +43,11 @@ padding-horizontal:8px;
 
 const AdminLogin = () => {
 
-  const {isLoggedIn,setisLoggedIn,AdminLogin, setAdminLogin}= useContext(GlobalContext);
+  const {isLoggedIn,setisLoggedIn,AdminLogin, setAdminLogin,  isAdminLoggedIn, setisAdminLoggedIn}= useContext(GlobalContext);
   const [LoginError, setLoginError] = useState(false);
   const CheckPassword = ()=>{
     if(userName==='Admin' && password==='Admin@123'){
-      setisLoggedIn(true);
+      setisAdminLoggedIn(true);
     }else{
       console.log('====================================');
       console.log('Invalid credentials');

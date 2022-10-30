@@ -6,13 +6,14 @@ import HomeNavigation from './HomeNavigation'
 import { GlobalContext } from '../../App'
 import AdminNavigation from './AdminNavigation'
 import UserNavigation from './UserNavigation'
+import AdminNavigationControl from './AdminNavigationController'
 
 const AppNavigation = () => {
   const {AdminLogin, setAdminLogin}= useContext(GlobalContext);
   return (
     <>
         { 
-        AdminLogin ? <AdminNavigation/> : <UserNavigation onPress={setAdminLogin}/>
+        AdminLogin ? <AdminNavigationControl/> : <UserNavigation onPress={setAdminLogin}/>
         }
     </>
   )

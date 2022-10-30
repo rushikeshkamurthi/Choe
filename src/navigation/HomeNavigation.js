@@ -5,7 +5,7 @@ import Home from '../screens/home/Home';
 import ChatScreen from '../screens/chat/ChatScreen';
 import SelectContact from '../screens/selectContact/SelectContact';
 import SelectMultipleContact from '../screens/selectMultipleContact/SelectMultipleContact';
-import YourCart from '../screens/newChat/YourCart';
+import YourCart from '../screens/yourCart/YourCart';
 
 
 const Stack = createNativeStackNavigator();

@@ -1,9 +1,8 @@
 import { View, Text, StyleSheet,  TouchableOpacity,
-  FlatList, Image } from 'react-native'
+  FlatList, Image, Alert } from 'react-native'
 import React, { useContext } from 'react'
 import styled from 'styled-components/native';
 import { GlobalContext } from '../../../App';
-import { useNavigation } from '@react-navigation/native';
 
 const Container = styled.View`
 height:100%;
@@ -14,7 +13,9 @@ const YourCart = ({navigation}) => {
   const {cart, setcart}= useContext(GlobalContext);
 
   deleteProductFromCart = () => {
-    Alert.alert('Success', 'The product has been deleted from your cart')
+
+    Alert.alert('Success', 'The product has been deleted from your cart');
+
   }
   return (
     <View style={styles.container}>
@@ -42,7 +43,6 @@ const YourCart = ({navigation}) => {
                     <Text style={styles.price}>{item.price}</Text>
                   </View>
                 </View>
-
                 <Image style={styles.cardImage} source={{uri:item.image}}/>
                 <View style={styles.cardFooter}>
                   <View style={styles.socialBarContainer}>
