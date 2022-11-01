@@ -3,12 +3,43 @@ import { View, Text, StyleSheet,  TouchableOpacity,
 import React, { useContext } from 'react'
 import styled from 'styled-components/native';
 import { GlobalContext } from '../../../App';
+import { Button } from 'react-native-paper';
 
 const Container = styled.View`
 height:100%;
 background-color:#ffffff; 
 `;
+
+
+const NoItemContainer = styled.View`
+padding: 20px;
+margin-top: 150px;
+`;
+const NoItemText = styled.Text`
+font-size : 26px;
+color:#2a17d4;
+align-self: center;
+align-content: center;
+font-weight: bold;
+`;
+const NoItemText2 = styled.Text`
+align-self: center;
+align-content: center;
+`;
+const ButtonContainer = styled.View`
+margin: 14px;
+margin-top:20px;
+
+`;
 const YourCart = ({navigation}) => {
+  const NoItemComponent = () => {
+
+    return (<View>
+      <NoItemContainer><NoItemText>Opps!! Look like you have no  items in your cart</NoItemText></NoItemContainer>
+    <View><NoItemText2>Please add items in your cart to checkout</NoItemText2></View>
+    </View>
+    );
+  }
 
   const {cart, setcart}= useContext(GlobalContext);
 
@@ -17,8 +48,9 @@ const YourCart = ({navigation}) => {
     Alert.alert('Success', 'The product has been deleted from your cart');
 
   }
-  return (
-    <View style={styles.container}>
+  return (<>
+    {
+      cart.length == 0 ? <Container><NoItemComponent></NoItemComponent></Container>: <View style={styles.container}>
         <FlatList style={styles.list}
           contentContainerStyle={styles.listContainer}
           data={cart}
@@ -60,12 +92,17 @@ const YourCart = ({navigation}) => {
                     </View>
                   </View>
                 </View>
+                
               </View>
             )
           }}/>
-         
+          <ButtonContainer>
+        <Button  mode="contained" >Check Out</Button>
+        </ButtonContainer>
       </View>
-  )
+    }
+  </>
+)
 }
 
 export default YourCart;

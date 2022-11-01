@@ -19,12 +19,18 @@ margin-top:20px;
 
 `;
 const LoginText = styled.Text`
+padding-top: 150px;
   font-size: 34px;
   text-align: center;
     font-weight: bold;
-    margin:10px; 
+    color:blue;
 `;
-
+const Subtext = styled.Text`
+  font-size: 10px;
+  text-align: center;
+    font-weight: bold;
+    color:#4136a8; 
+`;
 const ClickableText = styled.Text`
   text-align: center;
     font-weight: bold;
@@ -66,6 +72,7 @@ const AdminLogin = () => {
   return (
     <LoginContainer>
         <LoginText>Admin Login</LoginText>
+        <Subtext>Make sure you have a right credentials !!</Subtext>
         {LoginError && <ErrorContainer><Text>Invalid Credentials</Text><Text onPress={CloseErrorBox}>X</Text></ErrorContainer>}
         <InputContainer>
         <TextInput placeholder='Enter Admin Name'  label="Admin Name" mode="outlined" onChangeText={(value)=>setuserName(value)}></TextInput>

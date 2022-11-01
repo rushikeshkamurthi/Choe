@@ -25,11 +25,18 @@ const ClickableText = styled.Text`
     color: blue;
 `;
 const LoginText = styled.Text`
-  font-size: 34px;
+padding-top: 150px;
+  font-size: 40px;
   text-align: center;
     font-weight: bold;
-    margin:10px;
-    
+    color:#b03087; 
+`;
+
+const Subtext = styled.Text`
+  font-size: 10px;
+  text-align: center;
+    font-weight: bold;
+    color:#4136a8; 
 `;
 const ErrorContainer = styled.View`
 background-color: red;
@@ -63,7 +70,8 @@ const Login = () => {
   }
   return (
         <LoginContainer>
-        <LoginText>Login</LoginText>
+        <LoginText>Shoe</LoginText>
+        <Subtext>Add wings to you foots</Subtext>
         {LoginError && <ErrorContainer><Text>Invalid Credentials</Text><Text onPress={CloseErrorBox}>X</Text></ErrorContainer>}
         <InputContainer>
         <TextInput placeholder='Enter User Name'  label="User Name" mode="outlined" onChangeText={(value)=>setuserName(value)}></TextInput>
